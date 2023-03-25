@@ -1,134 +1,154 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Tech doc</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Responsive Tech Doc with SASS</title>
+    <link rel="stylesheet" href="./v4style.css">
+  </head>
 
-<body>
-  <nav id="navbar">
-    <header>Writing in GitHub</header>
-    <div class="nav-menu">
-      <ul>
-        <li class="nav-link"><a href="#Introduction">Introduction</a></li>
-        <li class="nav-link"><a href="#Adding_images">Adding images</a></li>
-        <li class="nav-link"><a href="#Creating_code_blocks">Creating code blocks</a></li>
-        <li class="nav-link"><a href="#Comments_and_horizontal_rules">Comments and horizontal rules</a></li>
-        <li class="nav-link"><a href="#Collapsing_sections">Collapsing sections</a></li>
-      </ul>
+  <body>
+    <div class="navbars">
+      <nav class="sidebar-menu">
+        <header>Writing in GitHub</header>
+          <ul>
+            <li class="nav-link"><a href="#Introduction">Introduction</a></li>
+            <li class="nav-link"><a href="#Adding_images">Adding images</a></li>
+            <li class="nav-link"><a href="#Creating_code_blocks">Creating code blocks</a></li>
+            <li class="nav-link"><a href="#Comments_and_horizontal_rules">Comments and horizontal rules</a></li>
+            <li class="nav-link"><a href="#Collapsing_sections">Collapsing sections</a></li>
+          </ul>
+      </nav>
+      <div class="mobile-nav-wrapper">
+        <input type="checkbox" class="hamburger-input" id="hamburger-input"/>
+        <label class="hamburger-label" for="hamburger-input">
+          <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="85" height="12" rx="8" fill="currentColor"></rect>
+            <rect y="30" width="85" height="12" rx="8" fill="currentColor"></rect>
+            <rect y="60" width="85" height="12" rx="8" fill="currentColor"></rect>
+        </svg></label>
+        <nav class="mobile-menu">
+          <header>Writing in GitHub</header>
+            <ul>
+              <li class="nav-link"><a href="#Introduction">Introduction</a></li>
+              <li class="nav-link"><a href="#Adding_images">Adding images</a></li>
+              <li class="nav-link"><a href="#Creating_code_blocks">Creating code blocks</a></li>
+              <li class="nav-link"><a href="#Comments_and_horizontal_rules">Comments and horizontal rules</a></li>
+              <li class="nav-link"><a href="#Collapsing_sections">Collapsing sections</a></li>
+            </ul>
+        </nav>        
+      </div>
     </div>
-  </nav>
-
-  <main id="main-doc">
-    <ol class="breadcrumbs">
-      <li><a href="">Home</a></li>
-      <li><a href="">Writing in GitHub</a></li>
-      <li>Adding Images and Visual Content</li>
-    </ol>
-    <article>
-      <h1><span class="sr-only">Writing in GitHub:</span> Adding Images and Visual Content</h1>
-      <section class="main-section" id="Introduction">
-        <header>
+    
+    <main>
+      <ol class="breadcrumbs">
+        <li><a href="">Home</a></li>
+        <li><a href="">Writing in GitHub</a></li>
+        <li><span class="mobile-break">Adding Images and Visual Content</span></li>
+      </ol>
+      <article class="visual-content-article">
+        <h1><span class="sr-only">Writing in GitHub:</span> Adding Images and Visual Content</h1>
+        <section class="main-section" id="Introduction">
           <h2>Introduction</h2>
-        </header>
-        <p>This guide is for adding images and other visual content to your README files. This guide assumes you already have a basic knowledge of:</p>
-        <ul>
-          <li>Using headings</li>
-          <li>Styling text with bold and italic</li>
-          <li>Adding links</li>
-        </ul>
-        <p>If you're not familiar with these, you can check out our <a href="">GitHub Writing Basics</a> page.</p>
-      </section>
-      <section class="main-section" id="Adding_images">
-        <header>
+          <p>This guide is for adding images and other visual content to your README files. This guide assumes you already have a basic knowledge of:</p>
+          <ul>
+            <li>Using headings</li>
+            <li>Styling text with bold and italic</li>
+            <li>Adding links</li>
+          </ul>
+          <p>If you're not familiar with these, you can check out our <a href="">GitHub Writing Basics</a> page.</p>
+        </section>
+        <section class="main-section" id="Adding_images">
           <h2>Adding images</h2>
-        </header>
-        <p>There are 3 common ways to add images to your READMEs.</p>
-        <ul>
-          <li>Markdown syntax <code>![]()</code></li>
-          <li>The <code>&lt;img&gt;</code> element</li>
-          <li>The <code>&lt;picture&gt;</code> element</li>
-        </ul>
-        <article>  
-          <h3>Markdown syntax <code>![]()</code></h3>
-          <p>You can display an image using <code>!</code>, then wrapping the alt text in brackets <code>[]</code>, and wrapping the link for the image in parentheses <code>()</code>.</p>
-          <pre>![Octocat](https://myoctocat.com/assets/images/base-octocat.svg)</pre>
-          <img class="octocat" src="https://myoctocat.com/assets/images/base-octocat.svg" alt="Octocat">
-        </article>
-        <article>  
-          <h3>The <code>&lt;img&gt;</code> element</h3>
-          <p>Another way to display an image is to use the HTML <code>&lt;img&gt;</code> tag.</p>
-          <pre>&lt;img src="https://myoctocat.com/assets/images/base-octocat.svg" alt="Octocat"&gt;</pre>
-        </article>
-        <article>  
-          <h3>The <code>&lt;picture&gt;</code> element</h3>
-          <p>To add a responsive image, like providing different images depending on whether the visitor is using light or dark mode, you can use the HTML <code>&lt;picture&gt;</code> tag.</p>
-          <pre>&lt;picture&gt;
- &lt;source media="(prefers-color-scheme: dark)" srcset="DARKMODE-IMG"&gt;
- &lt;source media="(prefers-color-scheme: light)" srcset="LIGHTMODE-IMG"&gt;
- &lt;img alt="Octocat" src="DEFAULT-IMG"&gt;
+          <p>There are 3 common ways to add images to your READMEs.</p>
+          <ul>
+            <li>Markdown syntax <code>![]()</code></li>
+            <li>The <code>&lt;img&gt;</code> element</li>
+            <li>The <code>&lt;picture&gt;</code> element</li>
+          </ul>
+          <article>  
+            <h3>Markdown syntax <code>![]()</code></h3>
+            <p>You can display an image using <code>!</code>, then wrapping the alt text in brackets <code>[]</code>, and wrapping the link for the image in parentheses <code>()</code>.</p>
+            <pre>![Octocat](https://myoctocat.com/assets/images/base-octocat.svg)</pre>
+            <img class="octocat" src="https://myoctocat.com/assets/images/base-octocat.svg" alt="Octocat">
+          </article>
+          <article>  
+            <h3>The <code>&lt;img&gt;</code> element</h3>
+            <p>Another way to display an image is to use the HTML <code>&lt;img&gt;</code> tag.</p>
+            <pre>&lt;img 
+  src="https://myoctocat.com/assets/images/base-octocat.svg" 
+  alt="Octocat"
+&#47;&gt;</pre>
+          </article>
+          <article>  
+            <h3>The <code>&lt;picture&gt;</code> element</h3>
+            <p>To add a responsive image, like providing different images depending on whether the visitor is using light or dark mode, you can use the HTML <code>&lt;picture&gt;</code> tag.</p>
+            <pre>&lt;picture&gt;
+  &lt;source 
+      media="(prefers-color-scheme: dark)" 
+      srcset="DARKMODE-IMG"&gt;
+  &lt;source 
+      media="(prefers-color-scheme: light)" 
+      srcset="LIGHTMODE-IMG"&gt;
+  &lt;img src="DEFAULT-IMG" alt="Octocat"&#47;&gt;
 &lt;&#47;picture&gt;</pre>
-          <p>Where you replace the capitalized titles in the <code>srcset</code> and <code>src</code> attributes, like <code>DARKMODE-IMG</code> or <code>DEFAULT-IMG</code> with the URL of the image you wish to use.</p>
-        </article>
-      </section>
-      <section class="main-section" id="Creating_code_blocks">
-        <header>
+            <p>Where you replace the capitalized titles in the <code>srcset</code> and <code>src</code> attributes, like <code>DARKMODE-IMG</code> or <code>DEFAULT-IMG</code> with the URL of the image you wish to use.</p>
+          </article>
+        </section>
+        <section class="main-section" id="Creating_code_blocks">
           <h2>Creating code blocks</h2>
-        </header>
-        <article>  
-          <h3>Fenced code blocks</h3>
-          <p>You can create fenced code blocks in your writeup using three backticks <code>```</code>.</p>
-          <pre>```
+          <article>  
+            <h3>Fenced code blocks</h3>
+            <p>You can create fenced code blocks in your writeup using three backticks <code>```</code>.</p>
+            <pre>```
   function test {
     console.log("Hello World!");
   }
 ```</pre>
-          <p>Adding a line before and after your code block isn't required, but it makes the raw markdown file easier to read.</p>
-        </article>
-        <article>  
-          <h3>Syntax highlighting</h3>
-          <p>You can enable syntax highlighting of your code block by including a language identifier in your code block.</p>
-          <pre>```js
+            <p>Adding a line before and after your code block isn't required, but it makes the raw markdown file easier to read.</p>
+          </article>
+          <article>  
+            <h3>Syntax highlighting</h3>
+            <p>You can enable syntax highlighting of your code block by including a language identifier in your code block.</p>
+            <pre>```js
   function test {
     console.log("Hello World!");
   }
 ```</pre>
-          <p>Which will output like this:</p>
-          <div class="syntax-wrapper">
-            <img class="syntax-highlight" src="/syntax-highlight.png" alt="block of code with color highlights">
-          </div>
-        </article>
-      </section>
-      <section class="main-section" id="Comments_and_horizontal_rules">
-        <header>
+            <p>Which will output like this:</p>
+            <div class="syntax-wrapper">
+              <img class="syntax-highlight" src="/syntax-highlight.png" alt="block of code with color highlights">
+            </div>
+          </article>
+        </section>
+        <section class="main-section" id="Comments_and_horizontal_rules">
           <h2>Comments and horizontal rules</h2>
-        </header>
-        <p>You can add comments to your writeup using the HTML comment syntax, like this:</p>
-        <pre>&lt;-- COMMENT --&gt;</pre>
-        <p>Replace the <code>COMMENT</code> with whatever note you wish to make to yourself, like adding a "to-do" item. The comment will be hidden in the output and only visible in your code.</p>
-        <p>You can also add horizontal rules to break up or divide your page content by typing three horizontal dashes.</p> 
-        <pre>---</pre>
-        <p>This will generate a long horizontal line (a horizontal rule) on your page.</p>
-        <p>Remember that in HTML, the <code>&lt;hr&gt;</code> is a semantic element and represents a thematic break, or a transition between different topics or content. See the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr">MDN article on the <code>&lt;hr&gt;</code> element</a> to learn more.</p>
-      </section>
-      <section class="main-section" id="Collapsing_sections">
-        <header>
+          <p>You can add comments to your writeup using the HTML comment syntax, like this:</p>
+          <pre>&lt;-- COMMENT --&gt;</pre>
+          <p>Replace the <code>COMMENT</code> with whatever note you wish to make to yourself, like adding a "to-do" item. The comment will be hidden in the output and only visible in your code.</p>
+          <p>You can also add horizontal rules to break up or divide your page content by typing three horizontal dashes.</p> 
+          <pre>---</pre>
+          <p>This will generate a long horizontal line (a horizontal rule) on your page.</p>
+          <p>Remember that in HTML, the <code>&lt;hr&gt;</code> is a semantic element and represents a thematic break, or a transition between different topics or content. See the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr">MDN article on the <code>&lt;hr&gt;</code> element</a> to learn more.</p>
+        </section>
+        <section class="main-section" id="Collapsing_sections">
           <h2>Collapsing sections</h2>
-        </header>
-        <p>If you want to keep your content visually clean while still including additional details or more information, you can use the <code>&lt;details&gt;</code> HTML tag to create collapsed sections.</p>
-        <pre>&lt;details&gt;
+          <p>If you want to keep your content visually clean while still including additional details or more information, you can use the <code>&lt;details&gt;</code> HTML tag to create collapsed sections.</p>
+          <pre>&lt;details&gt;
   &lt;summary&gt;More information&lt;&#47;summmary&gt;  
   Here is some more info on the topic!
 &lt;&#47;details&gt;</pre>
-        <p>And the output will look like this:</p>
-        <figure>
-          <img class="details-closed" src="/details-closed.png" alt="details element shown in closed position with only the title visible">
-          <img class="details-open" src="/details-open.png" alt="details element shown in open position with additional information visible">
-          <figcaption>Collapsed section closed and open</figcaption>
-        </figure>
-      </section>
-    </article>
-  </main>
-</body>
+          <p>And the output will look like this:</p>
+          <div class="figures-group">
+            <figure>
+              <img class="details-closed" src="/details-closed.png" alt="">
+              <figcaption>Collapsed section closed</figcaption>
+            </figure>
+            <figure>
+              <img class="details-open" src="/details-open.png" alt="">
+              <figcaption>Collapsed section open</figcaption>
+            </figure>
+        </section>
+      </article>
+    </main>
+  </body>
 </html>
