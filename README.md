@@ -45,11 +45,19 @@
 
 ### Built with
 
+- Semantic HTML5 markup
+- Responsive images using the `<img>` element with `srcset` and `sizes` attributes
+- CSS variables
+- CSS `mix-blend-mode` for blending backgrounds
+- Flexbox
+- Responsive design
+- Realistic workflow, building from professional Figma design files (design-to-code)
 
 
 ### What I learned
 
-
+Positioning and making the page responsive across all sizes (position fixed, relative, absolute)
+Creating a CSS-only mobile hamburger menu with underlay and slide-in mobile menu
 
 ### Continued development
 
