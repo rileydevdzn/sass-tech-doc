@@ -172,7 +172,7 @@ input {
       }
     }
     ~ .mobile-menu {
-      transform: translate(calc($space-base * -17.8125 * 2), 0);
+      transform: translate(calc($space-base * -35.625), 0);
     }
     ~ .overlay {
       visibility: visible;
