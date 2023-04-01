@@ -1,6 +1,6 @@
 <div align="center">
   <img 
-    src="./sass techdoc.png"
+    src="./sass techdoc bg.png"
     alt="Technical documentation page with guidance for how to add images and visual elements when writing in GitHub"
     height="350px">
 </div>
@@ -27,11 +27,11 @@ I also used this project to dig a little deeper into the capabilities of SASS, f
 
 <div align="center">
   <img
-    src="./techdoc mobile-closed.png"
+    src="./techdoc mobile-closed bg.png"
     alt="Mobile version of technical documentation page showing hamburger menu in upper right corner"
     height="350px">
   <img 
-    src="./techdoc mobile-open.png"
+    src="./techdoc mobile-open bg.png"
     alt="Mobile version of technical documentation page showing visible navigation menu after clicking hamburger menu"
     height="350px">
   <p><em>Mobile design with menu closed (left) and open (right)<em></p>
