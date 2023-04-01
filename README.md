@@ -1,7 +1,7 @@
 <div align="center">
   <img 
-    src=""
-    alt=""
+    src="./sass techdoc.png"
+    alt="Technical documentation page with guidance for how to add images and visual elements when writing in GitHub"
     height="350px">
 </div>
 
@@ -27,14 +27,14 @@
 
 <div align="center">
   <img
-    src=""
-    alt=""
+    src="./techdoc mobile-closed.png"
+    alt="Mobile version of technical documentation page showing hamburger menu in upper right corner"
     height="350px">
   <img 
-    src=""
-    alt=""
+    src="./techdoc mobile-open.png"
+    alt="Mobile version of technical documentation page showing visible navigation menu after clicking hamburger menu"
     height="350px">
-  <p><em><em></p>
+  <p><em>Mobile design with menu closed (left) and open (right)<em></p>
 </div>
 
 ### Links
@@ -46,12 +46,11 @@
 ### Built with
 
 - Semantic HTML5 markup
-- Responsive images using the `<img>` element with `srcset` and `sizes` attributes
+- Fluid typography with viewport units and the CSS `clamp()` function
 - CSS variables
-- CSS `mix-blend-mode` for blending backgrounds
+- CSS-only mobile hamburger menu
 - Flexbox
 - Responsive design
-- Realistic workflow, building from professional Figma design files (design-to-code)
 
 
 ### What I learned
@@ -65,8 +64,7 @@ Creating a CSS-only mobile hamburger menu with underlay and slide-in mobile menu
 
 ### Useful resources
 
-- [name]() - 
-- [name]() -
+- [Alvaro Trigo responsive CSS hamburger menu](https://alvarotrigo.com/blog/hamburger-menu-css-responsive/) - On completing my initial build of the mobile menu, I realized something was missing. This tutorial included an overlay that provides a dark background when the mobile menu slides into view, which provided a better visual than the white menu on white background. 
 
 ## Author
 
