@@ -39,7 +39,7 @@ I also used this project to dig a little deeper into the capabilities of SASS, f
 
 ### Links
 
-- See it in the browser: [SASS Tech doc with mobile menu]()
+- See it in the browser: [SASS Tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
 
 ## My process
 
