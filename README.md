@@ -8,8 +8,8 @@
 ## Table of contents
 
 - [Overview](#overview)
+  - [Links](#links)  
   - [The challenge](#the-challenge)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -19,9 +19,13 @@
 
 ## Overview
 
+### Links
+
+- View live page: [SASS Tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
+
 ### The challenge
 
-I wanted to experiment with creating a responsive page using different types of positioned elements. I also wanted to figure out how to build a CSS-only mobile navigation menu. In my desktop design, the vertical navigation menu is fixed on the left side of the page. For the mobile design, I wanted the identical menu to slide in from the right side of the page. I hypothesized I could create a CSS-only sliding mobile menu using a checkbox input and this project was a good exercise to test my idea.
+I wanted to experiment with creating a responsive technical documentation page using different types of positioned elements. I also wanted to figure out how to build a CSS-only mobile navigation menu. In my desktop design, the vertical navigation menu is fixed on the left side of the page. For the mobile design, I wanted the identical menu to slide in from the right side of the page. I hypothesized I could create a CSS-only sliding mobile menu using a checkbox input and this project was a good exercise to test my idea.
 
 I also used this project to dig a little deeper into the capabilities of SASS, focusing on nesting rules and mixins.
 
@@ -36,10 +40,6 @@ I also used this project to dig a little deeper into the capabilities of SASS, f
     height="350px">
   <p><em>Mobile design with menu closed (left) and open (right)<em></p>
 </div>
-
-### Links
-
-- See it in the browser: [SASS Tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
 
 ## My process
 
@@ -102,4 +102,5 @@ I'm quite comfortable with the SASS syntax, and my goal now is to improve my ski
 
 ## Author
 
+- Website - [Riley Portfolio](https://rileydevdzn.webflow.io)
 - Frontend Mentor - [@rileydevdzn](https://www.frontendmentor.io/profile/rileydevdzn)
