@@ -56,7 +56,11 @@ I also used this project to dig a little deeper into the capabilities of SASS, f
 
 ### What I learned
 
+#### *Positioned elements in responsive design*
+
 I explored a variety of positioning options to find the best fit for the design idea I had in my head and then experimented to find the best way to also keep the page responsive. My final build uses fixed positioning for the desktop design and absolute positioning for the mobile slide-in menu.
+
+#### *CSS-only mobile hamburger menu*
 
 I created a CSS-only mobile hamburger menu using a checkbox input that updates the color of the hamburger icon, slides in the mobile navigation menu from right, and provides a darkened background overlay on click.
 
@@ -79,7 +83,7 @@ input {
 }
 ```
 
-I focused on improving my SASS skills with mixins and nesting rules, along with variables and CSS functions to make my build responsive.
+I focused on improving my SASS skills with mixins and nesting, along with variables and CSS functions to make my build responsive.
 
 ```scss
 .mobile-menu {
@@ -96,7 +100,7 @@ I focused on improving my SASS skills with mixins and nesting rules, along with 
 
 ### Continued development
 
-I'm quite comfortable with the SASS syntax, and my goal now is to improve my skills and write more efficiently. 
+As I'm starting to get more comfortable with the SASS syntax, and my goal now is to improve my use of mixins while keeping CSS specificity low in my nesting. 
 
 ### Useful resources
 
