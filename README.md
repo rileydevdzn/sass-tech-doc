@@ -1,3 +1,5 @@
+# SASS Tech Doc with Mobile Menu
+
 <div align="center">
   <img 
     src="./sass techdoc bg.png"
@@ -21,7 +23,7 @@
 
 ### Links
 
-- View live page: [SASS Tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
+- View live page: [SASS tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
 
 ### The challenge
 
