@@ -60,13 +60,13 @@ $space-base: 1rem;
   @if $point == plant {
     @media (max-width: 1600px) { @content; }
   }
-  @if $point == sprout {
+  @else if $point == sprout {
     @media (max-width: 1250px) { @content; }
   }
-  @if $point == seedling {
+  @else if $point == seedling {
     @media (max-width: 750px) { @content; }
   }
-  @if $point == seed {
+  @else if $point == seed {
     @media (max-width: 580px) { @content; }
   }
 }
