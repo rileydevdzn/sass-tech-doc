@@ -1,112 +1,161 @@
 # Mobile-First Tech Doc with SASS
 
 <div align="center">
-  <img 
-    src="./sass techdoc bg.png"
-    alt="Technical documentation page with guidance for how to add images and visual elements when writing in GitHub"
-    height="350px">
+  <picture>
+    <source media="(max-width: 1199px)" srcset="./sass-techdoc-mobile.png"/>
+    <source media="(min-width: 1200px)" srcset="./sass-techdoc-desktop.png"/>
+    <img 
+    src="./sass-techdoc-mobile.png"
+    alt="Technical documentation page explaining how to add visuals in GitHub"
+    height="350px"
+    max-width="100%"/>
+  </picture>
+  <p>Tech Doc Page</br><em><small>(Hint: if you're on desktop, resize the browser window to see the mobile version)</small></em></p>
 </div>
+
+</br>
 
 ## Table of contents
 
 - [Overview](#overview)
   - [Links](#links)  
-  - [The challenge](#the-challenge)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [Highlights](#highlights)
+- [Build details](#build-details)
+  - [Features](#features)
+  - [Challenges](#challenges)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
 
+For this project, I created a technical documentation page, focused on text content with example code blocks.
+
+I wanted to challenge myself by creating the mobile version first, then expanding the design to fill the extra space on desktop. I also wanted to experiment with different navigation menu layouts, sliding in from the right on mobile and fixed on the left for desktop.
+
+This project provided an opportunity to dig a little deeper into the capabilities of SASS, focusing on nesting rules and mixins.  
+
+My build needed to fulfill the following:
+
+- mobile-first design
+- easily scannable text content written in plain language 
+- example code blocks to support and clarify content
+- collapsible mobile menu and fixed desktop menu versions
+
+</br>
+
 ### Links
 
-- View live page: [SASS tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
+View live page: [SASS tech doc with mobile menu](https://rileydevdzn.github.io/sass-tech-doc/)
 
-### The challenge
+</br>
 
-I wanted to experiment with creating a responsive technical documentation page using different types of positioned elements. I also wanted to figure out how to build a CSS-only mobile navigation menu. In my desktop design, the vertical navigation menu is fixed on the left side of the page. For the mobile design, I wanted the identical menu to slide in from the right side of the page. I hypothesized I could create a CSS-only sliding mobile menu using a checkbox input and this project was a good exercise to test my idea.
+### Highlights
 
-I also used this project to dig a little deeper into the capabilities of SASS, focusing on nesting rules and mixins.
-
-<div align="center">
-  <img
-    src="./techdoc mobile-closed bg.png"
-    alt="Mobile version of technical documentation page showing hamburger menu in upper right corner"
-    height="350px">
-  <img 
-    src="./techdoc mobile-open bg.png"
-    alt="Mobile version of technical documentation page showing visible navigation menu after clicking hamburger menu"
-    height="350px">
-  <p><em>Mobile design with menu closed (left) and open (right)</em></p>
-</div>
-
-## My process
-
-### Built with
-
+- Mobile-first design
+  - [CSS-only mobile hamburger menu](#css-only-mobile-hamburger-menu)
 - Semantic HTML5 markup
+  - [multiple navigation options](#multiple-navigation-options)
 - SASS
-- CSS-only mobile hamburger menu
-- Flexbox
-- Responsive design
+  - [variables and nested rules](#variables-and-nested-rules-in-sass)
 
+</br>
 
-### What I learned
+</br>
 
-#### *Positioned elements in responsive design*
+## Build details
 
-I explored a variety of positioning options to find the best fit for the design idea I had in my head and then experimented to find the best way to also keep the page responsive. My final build uses fixed positioning for the desktop design and absolute positioning for the mobile slide-in menu.
+### Features
 
 #### *CSS-only mobile hamburger menu*
 
-I created a CSS-only mobile hamburger menu using a checkbox input that updates the color of the hamburger icon, slides in the mobile navigation menu from right, and provides a darkened background overlay on click.
+For this design, I wanted to keep things simple and built the mobile navigation menu using just CSS.
+
+I used a checkbox input and label for the mobile menu, represented by a hamburger icon. When the user taps the hamburger icon, the mobile nav menu slides in from the right of the page. I included a darkened background avoid the white-on-white overlay of the menu over content and help  focus attention on the nav menu. A second tap slides the mobile nav back to right and out of view.
+
+<div align="center">
+  <img
+    src="./techdoc-mobilemenu-animxn.gif"
+    alt="Demo of mobile tech doc page showing hamburger menu functionality"
+    width="285px">
+  <p><em>Mobile design demo of hamburger menu</em></p>
+</div>
+
+</br>
+
+#### *Multiple navigation options*
+
+In the desktop design, the navigation menu for this topic is fixed on the left side of the page while the user can scroll through the main content.
+
+I also included breadcrumb navigation at the top of the main content to help users identify where they are within the overall technical documentation.
+
+<div align="center">
+  <img
+    src="./sass-techdoc-desktop.png"
+    alt="Desktop version of tech doc page with fixed primary navigation menu on left of page and breadcrumb navigation at top of main content"
+    width="100%">
+  <p><em>Desktop version of tech doc with fixed primary nav and top breadcrumb navigation</em></p>
+</div>
+
+
+</br>
+
+#### *Variables and nested rules in SASS*
+
+I focused on improving my SASS skills with variables, nested rules and mixins, along with CSS functions.
+
+Nested rules
 
 ```scss
 input {
-  display: none;
-  &:checked {
-    + label {
-      rect {
-        fill: $neutral-white;
+    display: none;
+    &:checked {
+      ~ nav {
+        transform: translate(calc($space-base * -17.8125 - 48vw), 0);
+      }
+      ~ .overlay {
+        visibility: visible;
       }
     }
-    ~ .mobile-menu {
-      transform: translate(calc($space-base * -35.625), 0);
-    }
-    ~ .overlay {
-      visibility: visible;
-    }
   }
-}
-```
+  ```
 
-I focused on improving my SASS skills with mixins and nesting, along with variables and CSS functions to make my build responsive.
+Variables and mixins
 
 ```scss
-.mobile-menu {
+nav {
   width: 85vw;
   max-width: calc($space-base * 17.8125);
-  height: 100%;
   background-color: $neutral-white;
+  height: 100vh;
+  margin-left: auto;
   @include box-shadow();
-  @include position(absolute, 0, calc(100% + calc($space-base * 17.8125)));
+  @include placement(flex, column, flex-end, flex-start);
+  @include position(absolute, $top: 0, $right: calc($space-base * -17.8125 - 50vw));
   z-index: 10;
-  @include transition(transform, 0.25s, ease);
+  @include transition(transform, 200ms, ease);
 }
 ```
+</br>
+
+### Challenges
+
+The biggest challenge with this build was figuring out why my mobile nav menu kept overflowing on mobile. After some research, I discovered that my issue was caused by mobile devices ignoring the overflow settings on the body element. To resolve this, I added an additional wrapper `<div>` inside the body element and set its position to relative and `overflow-x: hidden`.
+
+</br>
 
 ### Continued development
 
 As I'm starting to get more comfortable with the SASS syntax, and my goal now is to improve my use of mixins while keeping CSS specificity low in my nesting. 
 
+</br>
+
 ### Useful resources
 
-- [Alvaro Trigo responsive CSS hamburger menu](https://alvarotrigo.com/blog/hamburger-menu-css-responsive/) - On completing my initial build of the mobile menu, I realized something was missing. This tutorial included an overlay that displays a dark background when the mobile menu slides into view, which provided a better visual than the white menu on white background. 
+- [Alvaro Trigo responsive CSS hamburger menu](https://alvarotrigo.com/blog/hamburger-menu-css-responsive/) - On completing my initial build of the mobile menu, I realized something was missing. This tutorial included an overlay that displays a dark background when the mobile menu slides into view, which provided better visual focus than the white menu on white background. 
+
+</br>
 
 ## Author
 
-- Website - [Riley Portfolio](https://rileydevdzn.webflow.io)
-- Frontend Mentor - [@rileydevdzn](https://www.frontendmentor.io/profile/rileydevdzn)
+- Riley - [View Portfolio](https://rileydevdzn.webflow.io)
