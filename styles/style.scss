@@ -101,11 +101,18 @@ body {
   width: 1px;
 }
 
-
+.mobile-wrapper {
+  width: 100%;
+  position: relative;
+}
 .nav-wrapper {
   width: 100%;
-  @include position(relative);
-  @include placement(flex, column);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include position(absolute);
+  z-index: 3;
+  @include placement(flex, column, flex-start, flex-start);
   label {
     margin: calc(0.75 * $space-base) calc(0.5 * $space-base) 0 auto;
     cursor: pointer;
@@ -189,7 +196,7 @@ nav {
 
 main {
   width: 100%;
-  padding: 0 $space-base;
+  padding: calc(4 * $space-base) $space-base;
   @include bp(seedling) {
     width: calc(100vw - calc($space-base * 17.8125));
     padding: calc(6 * $space-base) calc(4 * $space-base) calc(4 * $space-base) calc(4 * $space-base);
