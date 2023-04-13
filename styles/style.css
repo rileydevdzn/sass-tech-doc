@@ -151,7 +151,7 @@ main {
 @media (min-width: 800px) {
   main {
     width: calc(100vw - 17.8125rem);
-    padding: 6rem 2rem 4rem 2rem;
+    padding: 6rem 4rem 4rem 4rem;
     position: absolute;
     top: 0;
     left: 17.8125rem;

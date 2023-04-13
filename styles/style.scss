@@ -192,7 +192,7 @@ main {
   padding: 0 $space-base;
   @include bp(seedling) {
     width: calc(100vw - calc($space-base * 17.8125));
-    padding: calc(6 * $space-base) calc(2 * $space-base) calc(4 * $space-base) calc(2 * $space-base);
+    padding: calc(6 * $space-base) calc(4 * $space-base) calc(4 * $space-base) calc(4 * $space-base);
     @include position(absolute, $top: 0, $left: calc($space-base * 17.8125));
   }
 }
