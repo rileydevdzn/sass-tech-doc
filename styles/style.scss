@@ -110,8 +110,6 @@ body {
 .nav-wrapper {
   width: 100%;
   height: 100vh;
-  //overflow-x: hidden;
-  //overflow-y: auto;
   @include position(absolute);
   z-index: 3;
   @include placement(flex, column, flex-start, flex-start);
@@ -133,6 +131,9 @@ body {
       }
       ~ nav {
         transform: translate(calc($space-base * -17.8125 - 48vw), 0);
+      }
+      ~ .overlay {
+        visibility: visible;
       }
     }
   }
@@ -195,6 +196,15 @@ nav {
     @include position(fixed, $top: 0, $left: 0);
   }
 }
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  @include position(absolute, $top: 0, $left: 0);
+  z-index: 5;
+  visibility: hidden;
+  @include transition(visibility, 150ms, ease);
+}
 
 main {
   width: 100%;
@@ -228,7 +238,6 @@ ol {
     }
   }
 }
-
 
 h1 {
   @include heading($h1-font-sz, $font-wt-bold, $primary-color-cyan);
