@@ -203,7 +203,7 @@ nav {
   @include position(absolute, $top: 0, $left: 0);
   z-index: 5;
   visibility: hidden;
-  @include transition(visibility, 150ms, ease);
+  @include transition(visibility, 50ms, ease);
 }
 
 main {

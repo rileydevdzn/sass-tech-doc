@@ -168,7 +168,7 @@ nav a:hover {
   z-index: 5;
   visibility: hidden;
   transition-property: visibility;
-  transition-duration: 150ms;
+  transition-duration: 50ms;
   transition-timing-function: ease;
 }
 
