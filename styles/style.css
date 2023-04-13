@@ -27,10 +27,6 @@ body {
   width: 1px;
 }
 
-/*.mobile-wrapper {
-  position: relative;
-  overflow-x: hidden;   
-}*/
 .nav-wrapper {
   width: 100%;
   position: relative;
@@ -59,6 +55,11 @@ body {
 }
 .nav-wrapper input:checked ~ nav {
   transform: translate(calc(-17.8125rem - 48vw), 0);
+}
+@media (min-width: 800px) {
+  .nav-wrapper label {
+    display: none;
+  }
 }
 
 nav {
@@ -96,6 +97,11 @@ nav header {
   font-weight: 400;
   color: hsl(0, 0%, 100%);
 }
+@media (min-width: 800px) {
+  nav header {
+    text-align: center;
+  }
+}
 nav ul {
   width: 100%;
   list-style: none;
@@ -110,6 +116,11 @@ nav li {
   border-bottom: 1px solid hsl(0, 0%, 87%);
   font-weight: 500;
 }
+@media (min-width: 800px) {
+  nav li {
+    padding: 1.75rem;
+  }
+}
 nav a {
   width: 100%;
   padding: 1.75rem 0;
@@ -123,10 +134,30 @@ nav a {
 nav a:hover {
   color: hsl(183, 81%, 36%);
 }
+@media (min-width: 800px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+  }
+}
 
 main {
   width: 100%;
   padding: 0 1rem;
+}
+@media (min-width: 800px) {
+  main {
+    width: calc(100vw - 17.8125rem);
+    padding: 6rem 2rem 4rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 17.8125rem;
+    bottom: auto;
+    right: auto;
+  }
 }
 
 ol {
@@ -184,6 +215,14 @@ article ul li {
   justify-content: center;
   white-space: normal;
 }
+@media (min-width: 800px) {
+  .visual-content-article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
 
 section {
   width: 100%;
@@ -235,26 +274,28 @@ p + p {
 .figures-group {
   width: 100%;
   display: flex;
-  flex-direction: center;
+  flex-direction: flex-start;
   align-items: space-around;
   justify-content: center;
   flex-wrap: wrap;
-  flex-basis: 1 1 250px;
+  flex-basis: 1 1 15.625rem;
   row-gap: 2rem;
-  margin: 1rem 0 4rem 0;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  margin: 1rem 0;
 }
 .figures-group figure {
+  width: 45%;
   text-align: center;
   height: 6.875rem;
   display: flex;
-  flex-direction: center;
-  align-items: space-between;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .figures-group figure .details-closed {
   width: 15.625rem;
-  max-width: 100%;
+  max-width: 85%;
 }
 .figures-group figure .details-open {
   width: 18.75rem;
@@ -264,137 +305,4 @@ p + p {
   margin-top: 1.25rem;
   font-style: italic;
   color: hsl(183, 81%, 36%);
-}
-
-/*
-// NAVBARS
-.navbars {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-nav {
-  header {
-    min-height: 20%;
-    background-color: $primary-color-cyan;
-    @include box-shadow();
-    padding: calc($space-base * 1.5);
-    @include place-ctr(flex, center, center);
-    @include heading($header-font-sz, $font-wt-norm, $neutral-white);
-    text-align: center;
-  }
-  ul {
-    list-style: none;
-    background-color: $neutral-white;
-  }
-  li {
-    padding: calc($space-base * 1.75);
-    border-bottom: 1px solid $border-color;
-    font-weight: $font-wt-med;
-  }
-  a {
-    padding: calc($space-base * 1.75) 0;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    @include transition(color, 0.2s, ease);
-    &:hover {
-      color: $primary-color-cyan;
-    }
-  }
-}
-
-.sidebar-menu {
-  width: 25%;
-  max-width: calc($space-base * 19);
-  height: 100%;
-  @include box-shadow();
-  @include position(fixed, 0, 0);
-  @include bp(seedling) {
-    display: none;
-  }
-}
-
-.mobile-nav-wrapper {
-  width: 100%;
-  height: 100%;
-  @include position(relative, 0, 0);
-  display: none;
-  @include bp(seedling) {
-    display: block;
-  }
-}
-
-.mobile-menu {
-  width: 85vw;
-  max-width: calc($space-base * 17.8125);
-  height: 100%;
-  background-color: $neutral-white;
-  @include box-shadow();
-  @include position(absolute, 0, calc(100% + calc($space-base * 17.8125)));
-  z-index: 10;
-  @include transition(transform, 0.25s, ease);
-}
-
-.overlay {
-  width: 100%;
-  height: 100vh;
-  background-color:rgba(0, 0, 0, 0.3);
-  position: absolute;
-  z-index: 4;
-  visibility: hidden;
-  @include transition(visibility, 0.15s, ease);
-}
-
-input {
-  display: none;
-  &:checked {
-    + label {
-      rect {
-        fill: $neutral-white;
-      }
-    }
-    ~ .mobile-menu {
-      transform: translate(calc($space-base * -35.625), 0);
-    }
-    ~ .overlay {
-      visibility: visible;
-    }
-  }
-}
-
-label {
-  cursor: pointer;
-  @include position(absolute, calc($space-base * 1.25), calc(100% - calc($space-base * 2.75)));
-  z-index: 20;
-  rect {
-    fill: $primary-color-cyan;
-  }
-}
-
-main {
-  @include position(absolute, 5%, 25%);
-  padding: 0 calc($space-base * 2) calc($space-base * 5) calc($space-base * 2);
-  @include bp(seedling) {
-    @include position(absolute, calc($space-base * 5), 0);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}*//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
