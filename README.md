@@ -1,4 +1,4 @@
-# SASS Tech Doc with Mobile Menu
+# Mobile-First Tech Doc with SASS
 
 <div align="center">
   <img 
