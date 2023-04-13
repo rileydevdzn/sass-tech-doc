@@ -118,7 +118,6 @@ body {
     z-index: 20;
     rect {
       fill: $primary-color-cyan;
-      @include transition(fill, 150ms, ease);
     }
   }
   input {
@@ -286,7 +285,6 @@ p {
   background-color: $code-bg-color;
 }
 
-
 .figures-group {
   width: 100%;
   @include placement(flex, center, space-around);
@@ -314,6 +312,9 @@ p {
     }
   }
 }
+
+
+
 
 /*
 // NAVBARS

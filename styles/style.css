@@ -50,9 +50,6 @@ body {
 }
 .nav-wrapper label rect {
   fill: hsl(183, 81%, 36%);
-  transition-property: fill;
-  transition-duration: 150ms;
-  transition-timing-function: ease;
 }
 .nav-wrapper input {
   display: none;
