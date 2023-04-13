@@ -8,8 +8,32 @@
   </head>
 
   <body>
-    <div class="navbars">
-      <nav class="sidebar-menu">
+    <div class="mobile-wrapper">
+      <div class="nav-wrapper">
+        <input type="checkbox" class="hamburger-input" id="hamburger-input"/>
+        <label class="hamburger-label" for="hamburger-input">
+          <span class="sr-only">Mobile navigation menu</span>
+          <svg viewBox="0 0 100 80" width="30" height="40">
+            <rect width="85" height="12" rx="8" fill="currentColor"></rect>
+            <rect y="30" width="85" height="12" rx="8" fill="currentColor"></rect>
+            <rect y="60" width="85" height="12" rx="8" fill="currentColor"></rect>
+          </svg>
+        </label>
+        <nav>
+          <header>Writing in GitHub</header>
+            <ul class="nav-menu">
+              <li class="nav-link"><a href="#Introduction">Introduction</a></li>
+              <li class="nav-link"><a href="#Adding_images">Adding images</a></li>
+              <li class="nav-link"><a href="#Creating_code_blocks">Creating code blocks</a></li>
+              <li class="nav-link"><a href="#Comments_and_horizontal_rules">Comments and horizontal rules</a></li>
+              <li class="nav-link"><a href="#Collapsing_sections">Collapsing sections</a></li>
+            </ul>
+          </nav>
+        <div class="overlay"></div>  
+      </div>
+    </div>
+
+      <!--<nav class="sidebar-menu">
         <header>Writing in GitHub</header>
           <ul>
             <li class="nav-link"><a href="#Introduction">Introduction</a></li>
@@ -18,8 +42,8 @@
             <li class="nav-link"><a href="#Comments_and_horizontal_rules">Comments and horizontal rules</a></li>
             <li class="nav-link"><a href="#Collapsing_sections">Collapsing sections</a></li>
           </ul>
-      </nav>
-      <div class="mobile-nav-wrapper">
+      </nav>-->
+      <!--<div class="mobile-nav-wrapper">
         <input type="checkbox" class="hamburger-input" id="hamburger-input"/>
         <label class="hamburger-label" for="hamburger-input">
           <svg viewBox="0 0 100 80" width="30" height="40">
@@ -40,7 +64,7 @@
         </nav>
         <div class="overlay"></div>        
       </div>
-    </div>
+    </div>-->
     
     <main>
       <ol class="breadcrumbs">
@@ -77,8 +101,7 @@
           <article>  
             <h3>The <code>&lt;img&gt;</code> element</h3>
             <p>Another way to display an image is to use the HTML <code>&lt;img&gt;</code> tag.</p>
-            <pre>&lt;img 
-  src="https://myoctocat.com/assets/images/base-octocat.svg" 
+            <pre>&lt;img src="https://myoctocat.com/assets/images/base-octocat.svg" 
   alt="Octocat"
 &#47;&gt;</pre>
           </article>
