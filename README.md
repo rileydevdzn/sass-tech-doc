@@ -2,15 +2,15 @@
 
 <div align="center">
   <picture>
-    <source media="(max-width: 1199px)" srcset="./sass-techdoc-mobile.png"/>
-    <source media="(min-width: 1200px)" srcset="./sass-techdoc-desktop.png"/>
+    <source media="(max-width: 1199px)" srcset="./techdoc-mobile-bg.png"/>
+    <source media="(min-width: 1200px)" srcset="./techdoc-desktop-bg.png"/>
     <img 
-    src="./sass-techdoc-mobile.png"
+    src="./techdoc-mobile-bg.png"
     alt="Technical documentation page explaining how to add visuals in GitHub"
     height="350px"
     max-width="100%"/>
   </picture>
-  <p>Tech Doc Page</br><em><small>(Hint: if you're on desktop, resize the browser window to see the mobile version)</small></em></p>
+  <p>Tech Doc Page</br><em><small>(on desktop, resize the browser window to see the mobile version)</small></em></p>
 </div>
 
 </br>
@@ -74,10 +74,12 @@ For this design, I wanted to keep things simple and built the mobile navigation 
 I used a checkbox input and label for the mobile menu, represented by a hamburger icon. When the user taps the hamburger icon, the mobile nav menu slides in from the right of the page. I included a darkened background avoid the white-on-white overlay of the menu over content and help  focus attention on the nav menu. A second tap slides the mobile nav back to right and out of view.
 
 <div align="center">
+<kbd>
   <img
     src="./techdoc-mobilemenu-animxn.gif"
     alt="Demo of mobile tech doc page showing hamburger menu functionality"
     width="285px">
+</kbd>
   <p><em>Mobile design demo of hamburger menu</em></p>
 </div>
 
@@ -91,10 +93,10 @@ I also included breadcrumb navigation at the top of the main content to help use
 
 <div align="center">
   <img
-    src="./sass-techdoc-desktop.png"
-    alt="Desktop version of tech doc page with fixed primary navigation menu on left of page and breadcrumb navigation at top of main content"
+    src="./techdoc-desktop-bg.png"
+    alt="Desktop version of tech doc page with fixed page navigation menu on left of page and breadcrumb navigation at top of main content"
     width="100%">
-  <p><em>Desktop version of tech doc with fixed primary nav and top breadcrumb navigation</em></p>
+  <p><em>Desktop version of tech doc with fixed page nav on left and top breadcrumb navigation</em></p>
 </div>
 
 
