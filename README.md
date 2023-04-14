@@ -78,7 +78,7 @@ I used a checkbox input and label for the mobile menu, represented by a hamburge
   <img
     src="./techdoc-mobilemenu-animxn.gif"
     alt="Demo of mobile tech doc page showing hamburger menu functionality"
-    width="285px">
+    width="250px">
 </kbd>
   <p><em>Mobile design demo of hamburger menu</em></p>
 </div>
