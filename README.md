@@ -10,7 +10,7 @@
     height="350px"
     max-width="100%"/>
   </picture>
-  <p>Tech Doc Page</br><em><small>(on desktop, resize the browser window to see the mobile version)</small></em></p>
+  <p>Tech Doc Page</br><em><small>(if viewing on desktop, resize the browser window to see the mobile version)</small></em></p>
 </div>
 
 </br>
